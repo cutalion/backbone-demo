@@ -1,0 +1,26 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#app {
+  padding-top: 40px;
+}
+
+section {
+  margin: 2em 0;
+}
+
+.row {
+  .movie {
+    padding: 1em 0;
+
+    h3 {
+      line-height: inherit;
+    }
+  }
+}
+
+.row:nth-child(odd) {
+  background-color: #F0F0F0;
+  border-radius: 0.5em;
+}
