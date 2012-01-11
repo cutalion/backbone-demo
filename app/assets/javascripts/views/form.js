@@ -12,10 +12,17 @@ App.Views.Form = Backbone.View.extend({
     render: function() {
       $(this.el).html(JST['templates/movies/form']());
       $('#app').html(this.el);
+      
+      this.$("[name='title']").val(this.model.attributes['title']);
+      this.$("[name='description']").val(this.model.attributes['description']);
+
+      if (this.options.mode == 'edit') {
+        this.$("h1").text("Edit a Movie");
+      }
     },
 
     save: function() {
-      console.log('save', this.model);
+      //console.log('save', this.model);
       var title = this.$("[name='title']").val();
       var description = this.$("[name='description']").val();
 
@@ -27,7 +34,7 @@ App.Views.Form = Backbone.View.extend({
 
         {
           success: function() {
-            console.log('saved');
+            //console.log('saved');
             Backbone.history.navigate('#', true);
           },
           error: function() {

@@ -17,4 +17,14 @@ class MoviesController < ApplicationController
       respond_with @movie, :status => :unprocessable_entity
     end
   end
+
+  def update 
+    @movie = Movie.find params[:id]
+
+    if @movie.update_attributes params[:movie]
+      respond_with @movie
+    else
+      respond_with @movie, :status => :unprocessable_entity
+    end
+  end
 end

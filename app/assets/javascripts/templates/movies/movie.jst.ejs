@@ -3,7 +3,8 @@
     <div class="span16">
       <h2><%= movie.get('title') %></h2>
       <p><%= movie.get('description') %></p>
-      <strong><%= movie.get('created_at') %></strong>
+      <strong>Created on: <%= movie.get('created_at') %></strong>
+      <p><a href="#movie/<%= movie.get('id')%>/edit">edit</a>
     </div>
   </div>
 </section>

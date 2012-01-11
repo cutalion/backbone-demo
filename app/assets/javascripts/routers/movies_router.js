@@ -2,6 +2,7 @@ App.Routers.Movies = Backbone.Router.extend({
   routes: {
     "": "index",
     "movie/:id": "show",
+    "movie/:id/edit": "edit",
     "new": "form"
   },
 
@@ -19,6 +20,19 @@ App.Routers.Movies = Backbone.Router.extend({
     movie.fetch({
         success: function(model, resp) {
             new App.Views.Edit({ model: movie });
+        },
+        error: function() {
+            new Error({ message: 'Could not find that document.' });
+            window.location.hash = '#';
+        }
+    });
+  },
+
+  edit: function(id) {
+    var movie = new Movie({ id: id });
+    movie.fetch({
+        success: function(model, resp) {
+            new App.Views.Form({ model: movie, mode: 'edit' });
         },
         error: function() {
             new Error({ message: 'Could not find that document.' });
