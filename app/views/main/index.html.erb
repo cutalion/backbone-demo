@@ -1,5 +1,7 @@
 <%= content_for :javascript do -%>
   <%= javascript_tag do %>
-    App.init();
+    $(function(){
+      App.init();
+    });
   <% end %>
 <% end -%>
