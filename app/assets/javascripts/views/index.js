@@ -6,7 +6,7 @@ App.Views.Index = Backbone.View.extend({
     },
 
     render: function() {
-      $(this.el).html(JST['templates/movies/index']( {collection: this.collection }));
+      $(this.el).html(JST['movies/index']( {collection: this.collection }));
       $('#app').html(this.el);
     }
 });

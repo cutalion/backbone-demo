@@ -6,7 +6,7 @@ App.Views.Edit = Backbone.View.extend({
     },
 
     render: function() {
-      $(this.el).html(JST['templates/movies/movie']( {movie: this.model }));
+      $(this.el).html(JST['movies/movie']( {movie: this.model }));
       $('#app').html(this.el);
     }
 });

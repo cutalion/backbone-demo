@@ -10,7 +10,7 @@ App.Views.Form = Backbone.View.extend({
     },
 
     render: function() {
-      $(this.el).html(JST['templates/movies/form']());
+      $(this.el).html(JST['movies/form']());
       $('#app').html(this.el);
       
       this.$("[name='title']").val(this.model.attributes['title']);
