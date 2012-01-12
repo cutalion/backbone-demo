@@ -10,7 +10,6 @@
 
 //= require underscore
 //= require backbone
-// require backbone.authtokenadapter
 
 //= require app
 
